@@ -42,9 +42,6 @@ jobs:
           platforms: linux/amd64
           file: .github/actions/Dockerfile
           push: true
-          secrets: |
-            username=foamdino
-            token=${{ secrets.PAT }}
           tags: |
-            ghcr.io/foamdino/static-site-example:latest
-            ghcr.io/foamdino/static-site-example:${{ env.RELEASE_VERSION }}
+            ghcr.io/${{ github.actor }}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.actor }}/${{ github.event.repository.name }}:${{ env.RELEASE_VERSION }}
